@@ -1,0 +1,683 @@
+
+<!DOCTYPE html>
+<html lang="en-KE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Explore Mathematics, Chemistry and Integrated Science and Agriculture tuition with Typical Muthoni. Book online or in-person classes in Murang’a, Makuyu, Thika and Kenol.">
+  <meta name="keywords" content="Mathematics tuition, Chemistry tuition, Integrated Science, Agriculture tuition, online tuition Kenya, tutor Kenya">
+  <meta name="author" content="Typical Muthoni">
+  <meta name="theme-color" content="#123d25">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Class Sessions | Typical Muthoni">
+  <meta property="og:description" content="Explore available tuition subjects and book your learning session.">
+
+  <title>Class Sessions | Typical Muthoni</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+
+  <style>
+    /* POSTER DISPLAY */
+
+    .poster-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+
+    .poster-card {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 12px;
+      background: #fff;
+      border: 1px solid #e3e9e3;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .poster-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .poster-card .btn {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+      font-size: 14px;
+    }
+
+
+    /* BOOKING FORM */
+
+    .booking-form {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 28px;
+      background: #fff;
+      border: 1px solid #e3e9e3;
+      border-radius: 14px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-group > label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #123d25;
+    }
+
+    .form-group input:not([type="checkbox"]),
+    .form-group select {
+      width: 100%;
+      min-height: 46px;
+      padding: 10px 12px;
+      border: 1px solid #d7dfd8;
+      border-radius: 7px;
+      background: #fff;
+      font: inherit;
+      font-size: 14px;
+      color: #222;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: 2px solid #258b32;
+      border-color: #258b32;
+    }
+
+
+    /* MULTIPLE SUBJECT SELECTION */
+
+    .subject-selection {
+      grid-column: 1 / -1;
+    }
+
+    .subject-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 14px;
+      border: 1px solid #d7dfd8;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .subject-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #26352b;
+      cursor: pointer;
+    }
+
+    .subject-option input {
+      width: 18px;
+      height: 18px;
+      margin: 0;
+      accent-color: #258b32;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .subject-hint {
+      font-size: 12px;
+      color: #68736b;
+      margin: 0;
+    }
+
+    .booking-form button {
+      grid-column: 1 / -1;
+      width: 100%;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    #booking-message {
+      grid-column: 1 / -1;
+      font-size: 13px;
+      margin: 0;
+    }
+
+
+    /* RESPONSIVE DISPLAY */
+
+    @media (max-width: 900px) {
+      .poster-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .poster-grid {
+        grid-template-columns: 1fr;
+        max-width: 430px;
+        margin: 0 auto;
+        gap: 20px;
+      }
+
+      .poster-card {
+        padding: 10px;
+      }
+
+      .booking-form {
+        grid-template-columns: 1fr;
+        padding: 18px;
+        gap: 14px;
+      }
+
+      .subject-selection,
+      .booking-form button,
+      #booking-message {
+        grid-column: 1;
+      }
+
+      .section-heading h1,
+      .section-heading h2 {
+        font-size: 24px;
+        line-height: 1.3;
+      }
+
+      .section-heading p {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="brand" href="index.html" aria-label="Typical Muthoni home">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">
+          <strong>Typical Muthoni</strong>
+          <span class="brand__tagline">LEARN · GROW · EXCEL</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="primary-navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="class-sessions.html" aria-current="page">Class Sessions</a>
+        <a href="get-in-touch.html">Get in Touch</a>
+        <a class="nav-booking" href="#booking">Book a Class</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    
+
+
+    <!-- CLASS POSTERS -->
+    <section class="section section--soft">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Our subjects</span>
+          <h2>Choose Your Subject</h2>
+          <p>Explore the tuition subjects below.</p>
+        </div>
+
+        <div class="poster-grid">
+
+          <!-- MATHEMATICS -->
+          <article class="poster-card">
+
+            <img
+              src="assets/posters/mathematics.png"
+              alt="Mathematics tuition poster"
+              class="poster-image"
+              width="1024"
+              height="1024"
+              loading="lazy">
+
+            <a class="btn btn--primary"
+               href="#booking"
+               data-subject="Mathematics">
+              Book Mathematics
+            </a>
+
+          </article>
+
+
+          <!-- CHEMISTRY -->
+          <article class="poster-card">
+
+            <img
+              src="assets/posters/chemistry.png"
+              alt="Chemistry tuition poster"
+              class="poster-image"
+              width="1024"
+              height="1024"
+              loading="lazy">
+
+            <a class="btn btn--primary"
+               href="#booking"
+               data-subject="Chemistry">
+              Book Chemistry
+            </a>
+
+          </article>
+
+
+          <!-- INTEGRATED SCIENCE AND AGRICULTURE -->
+          <article class="poster-card">
+
+            <img
+              src="assets/posters/intergrated.png"
+              alt="Integrated Science and Agriculture tuition poster"
+              class="poster-image"
+              width="1024"
+              height="1024"
+              loading="lazy">
+
+            <a class="btn btn--primary"
+               href="#booking"
+               data-subject="Integrated Science and Agriculture">
+              Book Integrated Science
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- BOOKING FORM -->
+    <section class="section" id="booking">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Start your learning journey</span>
+          <h2>Book a Class</h2>
+          <p>
+            Complete the form below to send your booking enquiry
+            directly to Typical Muthoni on WhatsApp.
+          </p>
+        </div>
+
+
+        <form class="booking-form" id="booking-form">
+
+          <!-- NAME -->
+          <div class="form-group">
+            <label for="student-name">Full Name</label>
+            <input
+              type="text"
+              id="student-name"
+              name="name"
+              placeholder="Enter your full name"
+              autocomplete="name"
+              required>
+          </div>
+
+
+          <!-- PHONE -->
+          <div class="form-group">
+            <label for="student-phone">Phone Number</label>
+            <input
+              type="tel"
+              id="student-phone"
+              name="phone"
+              placeholder="e.g. 0712345678"
+              autocomplete="tel"
+              required>
+          </div>
+
+
+          <!-- SUBJECTS: MULTIPLE SELECTION -->
+          <div class="form-group subject-selection">
+
+            <label>Subjects Interested In</label>
+
+            <p class="subject-hint">
+              Select one or more subjects.
+            </p>
+
+            <div class="subject-options">
+
+              <label class="subject-option">
+                <input
+                  type="checkbox"
+                  name="subject"
+                  value="Mathematics">
+                <span>Mathematics</span>
+              </label>
+
+              <label class="subject-option">
+                <input
+                  type="checkbox"
+                  name="subject"
+                  value="Chemistry">
+                <span>Chemistry</span>
+              </label>
+
+              <label class="subject-option">
+                <input
+                  type="checkbox"
+                  name="subject"
+                  value="Integrated Science and Agriculture">
+                <span>Integrated Science & Agriculture</span>
+              </label>
+
+            </div>
+
+          </div>
+
+
+          <!-- CLASS / GRADE -->
+          <div class="form-group">
+            <label for="student-class">Class / Grade</label>
+
+            <select id="student-class" name="class" required>
+              <option value="">Select class or grade</option>
+              <option value="Grade 7">Grade 7</option>
+              <option value="Grade 8">Grade 8</option>
+              <option value="Grade 9">Grade 9</option>
+              <option value="Grade 10">Grade 10</option>
+              <option value="Grade 11">Grade 11</option>
+              <option value="Grade 12">Grade 12</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+
+          <!-- STARTING DATE -->
+          <div class="form-group">
+            <label for="starting-date">Preferred Starting Date</label>
+
+            <input
+              type="date"
+              id="starting-date"
+              name="starting-date"
+              required>
+          </div>
+
+
+          <!-- GENDER -->
+          <div class="form-group">
+            <label for="student-gender">Gender</label>
+
+            <select id="student-gender" name="gender" required>
+              <option value="">Select gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+
+
+          <!-- LOCATION -->
+          <div class="form-group">
+            <label for="class-location">Preferred Class Location</label>
+
+            <select id="class-location" name="location" required>
+              <option value="">Select location</option>
+              <option value="Online">Online</option>
+              <option value="Murang'a">Murang'a</option>
+              <option value="Makuyu">Makuyu</option>
+              <option value="Thika">Thika</option>
+              <option value="Kenol">Kenol</option>
+            </select>
+          </div>
+
+
+          <!-- SUBMIT -->
+          <button type="submit" class="btn btn--primary">
+            Submit Booking Enquiry →
+          </button>
+
+          <p id="booking-message" role="status" aria-live="polite"></p>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="container footer-main">
+
+      <div class="footer-about">
+
+        <a class="brand brand--footer" href="index.html" aria-label="Typical Muthoni home">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__name">
+            <strong>Typical Muthoni</strong>
+            <span class="brand__tagline">LEARN · GROW · EXCEL</span>
+          </span>
+        </a>
+
+        <p>
+          Supportive tuition that helps learners build understanding,
+          confidence and strong learning habits.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+        <h3>Explore</h3>
+
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="class-sessions.html">Class Sessions</a></li>
+          <li><a href="get-in-touch.html">Get in Touch</a></li>
+        </ul>
+      </div>
+
+
+      <div class="footer-column">
+        <h3>Connect</h3>
+
+        <ul class="footer-links">
+          <li>
+            <a href="https://wa.me/254794895815" target="_blank" rel="noopener noreferrer">
+              WhatsApp: 0794 895 815
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.tiktok.com/@typical.muthoni" target="_blank" rel="noopener noreferrer">
+              TikTok: @typical.muthoni
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+      <span>© <span id="current-year">2026</span> Typical Muthoni. All rights reserved.</span>
+      <span>Learn · Grow · Excel</span>
+    </div>
+
+  </footer>
+
+
+  <!-- FLOATING WHATSAPP -->
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/254794895815"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Typical Muthoni on WhatsApp">
+
+    <span class="whatsapp-float__icon" aria-hidden="true">☏</span>
+    <span>WhatsApp</span>
+
+  </a>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    // MOBILE NAVIGATION
+    const menuButton = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('#primary-navigation');
+
+    menuButton?.addEventListener('click', () => {
+
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+
+      menuButton.setAttribute(
+        'aria-label',
+        isOpen ? 'Open navigation' : 'Close navigation'
+      );
+
+      navigation.classList.toggle('is-open', !isOpen);
+
+    });
+
+
+    // CLOSE MOBILE MENU AFTER CLICKING A LINK
+    navigation?.querySelectorAll('a').forEach(link => {
+
+      link.addEventListener('click', () => {
+
+        navigation.classList.remove('is-open');
+
+        menuButton?.setAttribute('aria-expanded', 'false');
+
+        menuButton?.setAttribute('aria-label', 'Open navigation');
+
+      });
+
+    });
+
+
+    // UPDATE COPYRIGHT YEAR
+    const yearElement = document.querySelector('#current-year');
+
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+
+
+    // AUTO-SELECT SUBJECT WHEN A POSTER BUTTON IS CLICKED
+    document.querySelectorAll('[data-subject]').forEach(button => {
+
+      button.addEventListener('click', () => {
+
+        const selectedSubject = button.dataset.subject;
+
+        document.querySelectorAll('input[name="subject"]').forEach(checkbox => {
+
+          if (checkbox.value === selectedSubject) {
+            checkbox.checked = true;
+          }
+
+        });
+
+      });
+
+    });
+
+
+    // BOOKING FORM SUBMISSION TO WHATSAPP
+    const bookingForm = document.querySelector('#booking-form');
+
+    bookingForm?.addEventListener('submit', function(event) {
+
+      event.preventDefault();
+
+      const name = document.querySelector('#student-name').value.trim();
+
+      const phone = document.querySelector('#student-phone').value.trim();
+
+      const subjects = Array.from(
+        document.querySelectorAll('input[name="subject"]:checked')
+      ).map(checkbox => checkbox.value);
+
+      const studentClass = document.querySelector('#student-class').value;
+
+      const startingDate = document.querySelector('#starting-date').value;
+
+      const gender = document.querySelector('#student-gender').value;
+
+      const location = document.querySelector('#class-location').value;
+
+
+      // Check that at least one subject is selected
+      if (subjects.length === 0) {
+
+        document.querySelector('#booking-message').textContent =
+          'Please select at least one subject.';
+
+        return;
+
+      }
+
+
+      // Prepare WhatsApp message
+      const message =
+        `Hello Typical Muthoni, I would like to book a tuition class.\n\n` +
+        `Full Name: ${name}\n` +
+        `Phone Number: ${phone}\n` +
+        `Subjects: ${subjects.join(', ')}\n` +
+        `Class/Grade: ${studentClass}\n` +
+        `Preferred Starting Date: ${startingDate}\n` +
+        `Gender: ${gender}\n` +
+        `Preferred Location: ${location}`;
+
+
+      const whatsappURL =
+        `https://wa.me/254794895815?text=${encodeURIComponent(message)}`;
+
+
+      window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+
+    });
+
+  </script>
+
+</body>
+</html>

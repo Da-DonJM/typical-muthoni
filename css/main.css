@@ -1,0 +1,1188 @@
+
+/* =========================================
+   TYPICAL MUTHONI WEBSITE
+   Main Stylesheet
+   Colours: Green, White & Black
+========================================= */
+
+/* 1. ROOT VARIABLES */
+
+:root {
+    --green-dark: #123d25;
+    --green: #258b32;
+    --green-light: #35b52d;
+    --green-soft: #edf7ed;
+
+    --black: #171b18;
+    --white: #ffffff;
+    --grey: #68736b;
+    --light-bg: #f7f9f7;
+    --border: #e3e9e3;
+
+    --radius: 16px;
+    --shadow: 0 14px 38px rgba(18, 61, 37, 0.09);
+
+    --container: 1160px;
+    --header-height: 78px;
+}
+
+
+/* 2. RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--black);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Manrope", sans-serif;
+    color: var(--green-dark);
+    line-height: 1.2;
+    letter-spacing: -0.035em;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4.8rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.1rem);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+:focus-visible {
+    outline: 3px solid var(--green-light);
+    outline-offset: 3px;
+}
+
+
+/* 3. CONTAINER AND SECTIONS */
+
+.container {
+    width: min(var(--container), calc(100% - 48px));
+    margin: auto;
+}
+
+.section {
+    padding: clamp(56px, 8vw, 96px) 0;
+}
+
+.section--soft {
+    background: var(--light-bg);
+}
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: 35px;
+}
+
+.section-heading p {
+    color: var(--grey);
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 12px;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.eyebrow::before {
+    content: "";
+    width: 22px;
+    height: 3px;
+    background: var(--green-light);
+    border-radius: 5px;
+}
+
+
+/* 4. LOGO */
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--green-dark);
+}
+
+.brand__mark {
+    position: relative;
+    display: grid;
+    width: 43px;
+    height: 43px;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--green-dark);
+}
+
+.brand__mark::before {
+    content: "";
+    width: 23px;
+    height: 17px;
+    border: 2px solid var(--white);
+    border-radius: 3px;
+    transform: skew(-8deg);
+}
+
+.brand__mark::after {
+    content: "";
+    position: absolute;
+    right: 8px;
+    bottom: 7px;
+    width: 5px;
+    height: 23px;
+    border-radius: 3px;
+    background: var(--green-light);
+    transform: rotate(35deg);
+}
+
+.brand__name {
+    display: flex;
+    flex-direction: column;
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.brand__name strong {
+    font-size: 18px;
+}
+
+.brand__tagline {
+    margin-top: 4px;
+    color: var(--grey);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+
+/* 5. HEADER AND NAVIGATION */
+
+.site-header {
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    min-height: var(--header-height);
+    border-bottom: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(14px);
+}
+
+.header-inner {
+    display: flex;
+    min-height: var(--header-height);
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.site-nav a {
+    color: #4e5a51;
+    font-size: 14px;
+    font-weight: 700;
+    transition: color 0.2s;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+    color: var(--green);
+}
+
+.site-nav .nav-booking {
+    padding: 11px 17px;
+    border-radius: 10px;
+    background: var(--green-dark);
+    color: var(--white);
+}
+
+.site-nav .nav-booking:hover {
+    background: var(--green);
+    color: var(--white);
+}
+
+
+/* 6. MOBILE MENU BUTTON */
+
+.menu-toggle {
+    display: none;
+    width: 43px;
+    height: 43px;
+    padding: 9px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--white);
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 21px;
+    height: 2px;
+    margin: 5px auto;
+    border-radius: 4px;
+    background: var(--green-dark);
+}
+
+
+/* 7. BUTTONS */
+
+.btn {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 13px 20px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 800;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn--primary {
+    background: var(--green-dark);
+    color: var(--white);
+}
+
+.btn--primary:hover {
+    background: var(--green);
+}
+
+.btn--outline {
+    border-color: var(--green-dark);
+    background: transparent;
+    color: var(--green-dark);
+}
+
+.btn--outline:hover {
+    background: var(--green-soft);
+}
+
+.btn--light {
+    background: var(--white);
+    color: var(--green-dark);
+}
+
+
+/* 8. HOME HERO SECTION */
+
+.hero {
+    display: grid;
+    min-height: 590px;
+    grid-template-columns: 1fr 0.95fr;
+    align-items: center;
+    gap: 60px;
+    padding-top: 64px;
+    padding-bottom: 78px;
+}
+
+.hero__content {
+    max-width: 590px;
+}
+
+.hero__title span {
+    color: var(--green);
+}
+
+.hero__description {
+    max-width: 520px;
+    color: var(--grey);
+    font-size: 17px;
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    margin-top: 27px;
+}
+
+.hero__image-wrap {
+    position: relative;
+}
+
+.hero__image {
+    width: 100%;
+    height: 540px;
+    border-radius: 24px 24px 85px 24px;
+    object-fit: cover;
+    object-position: center 28%;
+    box-shadow: var(--shadow);
+}
+
+.hero__image-note {
+    position: absolute;
+    right: -18px;
+    bottom: 22px;
+    max-width: 240px;
+    padding: 15px 18px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* 9. SUBJECT CARDS */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.subject-card {
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--white);
+    transition: 0.2s ease;
+}
+
+.subject-card:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-4px);
+}
+
+.subject-card__icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 18px;
+    place-items: center;
+    border-radius: 13px;
+    background: var(--green-soft);
+    color: var(--green-dark);
+    font-size: 24px;
+}
+
+.subject-card p {
+    margin-bottom: 0;
+    color: var(--grey);
+    font-size: 14px;
+}
+
+
+/* 10. CLASS SESSION POSTERS */
+
+.poster-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 24px;
+}
+
+.poster-card {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: 0 7px 24px rgba(18, 61, 37, 0.05);
+}
+
+.poster-card__image-link {
+    display: block;
+    overflow: hidden;
+    background: var(--light-bg);
+}
+
+.poster-card__image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform 0.25s;
+}
+
+.poster-card__image-link:hover .poster-card__image {
+    transform: scale(1.025);
+}
+
+.poster-card__body {
+    padding: 18px;
+}
+
+.poster-card__title {
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+.poster-card__body p {
+    margin-bottom: 0;
+    color: var(--grey);
+    font-size: 14px;
+}
+
+.poster-card__action {
+    display: inline-flex;
+    margin-top: 13px;
+    color: var(--green);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+/* 11. BOOKING FORM */
+
+.booking-section {
+    display: grid;
+    grid-template-columns: 0.72fr 1.28fr;
+    align-items: start;
+    gap: 50px;
+}
+
+.booking-intro {
+    position: sticky;
+    top: 105px;
+}
+
+.booking-intro p {
+    color: var(--grey);
+}
+
+.booking-form,
+.contact-form {
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    background: var(--white);
+    box-shadow: 0 12px 35px rgba(18, 61, 37, 0.06);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.form-field {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-field--full {
+    grid-column: 1 / -1;
+}
+
+.form-field label,
+.form-label {
+    color: var(--black);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 13px;
+    border: 1px solid #dce4dc;
+    border-radius: 10px;
+    outline: none;
+    background: #fcfdfc;
+    color: var(--black);
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.form-field textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(53, 181, 45, 0.12);
+}
+
+.form-help {
+    color: var(--grey);
+    font-size: 12px;
+}
+
+.subject-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.subject-option {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 11px 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fcfdfc;
+    color: #39443c;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.subject-option input {
+    width: 17px;
+    height: 17px;
+    min-height: 0;
+    accent-color: var(--green);
+}
+
+.form-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 20px 0;
+    color: var(--grey);
+    font-size: 13px;
+}
+
+.form-consent input {
+    width: 17px;
+    height: 17px;
+    margin-top: 3px;
+    accent-color: var(--green);
+}
+
+.booking-form .btn,
+.contact-form .btn {
+    width: 100%;
+}
+
+.form-status {
+    min-height: 20px;
+    margin-top: 12px;
+    color: var(--green-dark);
+    font-size: 13px;
+}
+
+
+/* 12. CONTACT PAGE */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: start;
+    gap: 60px;
+}
+
+.contact-details {
+    display: grid;
+    gap: 13px;
+    margin-top: 28px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 17px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--white);
+}
+
+.contact-item__icon {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    place-items: center;
+    border-radius: 13px;
+    background: var(--green-soft);
+    color: var(--green-dark);
+    font-size: 21px;
+}
+
+.contact-item__text {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+}
+
+.contact-item__label {
+    color: var(--grey);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.contact-item__value {
+    overflow-wrap: anywhere;
+    color: var(--green-dark);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.contact-item__value:hover {
+    color: var(--green);
+}
+
+
+/* 13. COMMON FOOTER */
+
+.site-footer {
+    background: var(--green-dark);
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 0.8fr;
+    gap: 45px;
+    padding-top: 55px;
+    padding-bottom: 38px;
+}
+
+.brand--footer {
+    color: var(--white);
+}
+
+.brand--footer .brand__mark {
+    background: var(--white);
+}
+
+.brand--footer .brand__mark::before {
+    border-color: var(--green-dark);
+}
+
+.brand--footer .brand__mark::after {
+    border-color: var(--white);
+}
+
+.brand--footer .brand__tagline {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.footer-about p {
+    max-width: 330px;
+    margin-top: 17px;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 14px;
+}
+
+.footer-column h3 {
+    margin-bottom: 16px;
+    color: var(--white);
+    font-size: 15px;
+}
+
+.footer-links {
+    display: grid;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--green-light);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 12px;
+}
+
+
+/* 14. FLOATING WHATSAPP BUTTON */
+
+.whatsapp-float {
+    position: fixed;
+    z-index: 1100;
+    right: 22px;
+    bottom: 22px;
+    display: inline-flex;
+    min-height: 54px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border: 2px solid var(--white);
+    border-radius: 999px;
+    background: #159447;
+    color: var(--white);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    font-weight: 800;
+    transition: 0.2s;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-3px);
+    background: #107a3a;
+}
+
+.whatsapp-float__icon {
+    font-size: 22px;
+    line-height: 1;
+}
+
+
+/* 15. INNER PAGE BANNER */
+
+.page-banner {
+    padding: 75px 0;
+    border-bottom: 1px solid var(--border);
+    background: var(--light-bg);
+}
+
+.page-banner h1 {
+    margin-bottom: 12px;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+.page-banner p {
+    max-width: 650px;
+    margin-bottom: 0;
+    color: var(--grey);
+}
+
+
+/* =========================================
+   16. TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 900px) {
+
+    .site-nav {
+        gap: 18px;
+    }
+
+    .hero {
+        gap: 35px;
+    }
+
+    .hero__image {
+        height: 460px;
+    }
+
+    .booking-section {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-intro {
+        position: static;
+    }
+
+    .footer-main {
+        gap: 28px;
+    }
+
+}
+
+
+/* =========================================
+   17. MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 700px) {
+
+    :root {
+        --header-height: 70px;
+    }
+
+    .container {
+        width: calc(100% - 36px);
+    }
+
+    /* Mobile navigation */
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .site-nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+        padding: 12px 18px 20px;
+        border-bottom: 1px solid var(--border);
+        background: var(--white);
+        box-shadow: 0 14px 22px rgba(18, 61, 37, 0.08);
+    }
+
+    .site-nav.is-open {
+        display: flex;
+    }
+
+    .site-nav a {
+        padding: 13px 8px;
+    }
+
+    .site-nav .nav-booking {
+        margin-top: 7px;
+        text-align: center;
+    }
+
+    /* Hero */
+
+    .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding-top: 43px;
+        padding-bottom: 58px;
+    }
+
+    .hero__image {
+        height: min(112vw, 480px);
+        border-radius: 16px 16px 65px 16px;
+    }
+
+    .hero__image-note {
+        right: 10px;
+        bottom: 12px;
+    }
+
+    /* Cards */
+
+    .card-grid,
+    .poster-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .poster-grid {
+        max-width: 470px;
+        margin: auto;
+    }
+
+    .poster-card__body {
+        padding: 16px;
+    }
+
+    /* Contact */
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 22px;
+        padding-top: 42px;
+        padding-bottom: 30px;
+    }
+
+    .footer-about {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+}
+
+
+/* =========================================
+   18. SMALL MOBILE DEVICES
+========================================= */
+
+@media (max-width: 460px) {
+
+    .hero__actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hero__actions .btn {
+        width: 100%;
+    }
+
+    .form-grid,
+    .subject-options {
+        grid-template-columns: 1fr;
+    }
+
+    .form-field--full {
+        grid-column: auto;
+    }
+
+    .booking-form,
+    .contact-form {
+        padding: 18px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-about {
+        grid-column: auto;
+    }
+
+    .whatsapp-float {
+        right: 14px;
+        bottom: 14px;
+        min-height: 50px;
+        padding: 10px 15px;
+    }
+
+}
+
+
+/* 19. ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+}
+
+/* ================= POSTER DISPLAY ================= */
+
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.poster-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid #e3e9e3;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.poster-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.poster-card .btn {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+
+/* ================= RESPONSIVE TYPOGRAPHY ================= */
+
+body {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+h1,
+.hero__title {
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: clamp(23px, 3vw, 32px);
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.btn,
+.nav-booking {
+  font-size: 14px;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+  .poster-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .poster-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    max-width: 430px;
+    margin: 0 auto;
+  }
+
+  .poster-card {
+    padding: 10px;
+  }
+
+  h1,
+  .hero__title {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+
+  h3 {
+    font-size: 17px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .section {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+}
+
+.subject-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #d7dfd8;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.subject-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.subject-option input {
+  width: 17px;
+  height: 17px;
+  accent-color: #258b32;
+  cursor: pointer;
+}
